@@ -1,0 +1,16 @@
+@app.route("/listar", methods=["GET"])
+def listar():
+    documentos = list(collection.find({},  {"_id": 0}))
+    return jsonify(documentos), 200
+
+@app.route("/adicionar", methods=["POST"])
+def criar():
+    dados = request.json
+    resultado = collection.insert_one(dados)
+    return jsonify({'message': "batata"}), 200
+
+@app.route("/modificar/<string:nome>", methods=["PUT"])
+def modificar(nome):
+    dados = request.json
+    collection.update_one({'pessoas': nome}, {'$set': dados})
+    return jsonify({'message': "Atualizado com sucesso!"}), 200

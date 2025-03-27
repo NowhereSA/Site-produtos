@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "nome": "Notebook Gamer",
+        "preco": 5500.00
+    },
+    {
+        "id": 2,
+        "nome": "Mouse sem fio",
+        "preco": 120.50
+    },
+    {
+        "id": 3,
+        "nome": "Teclado Mecânico",
+        "preco": 350.75
+    }
+]

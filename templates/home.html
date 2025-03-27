@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            display: none; /* Esconde o formulário inicialmente */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            const form = document.querySelector("form");
+            form.style.display = form.style.display === "none" || form.style.display === "" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço (R$)</th>
+        </tr>
+        {% for produto in dados %}
+        <tr>
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ "%.2f"|format(produto.preco) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
