@@ -22,5 +22,5 @@ Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
 1. **Clone este repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/NowhereSA/Site-produtos.git
+   cd Site-produtos
