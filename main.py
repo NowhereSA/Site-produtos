@@ -17,7 +17,6 @@ def carregar_produtos():
 @app.route("/produtos", methods=["GET"])
 def home():
     documentos = list(collection.find({}, {"_id": 0}))
-    print(documentos)
     return render_template('home.html', dados=documentos)
 
 @app.route("/produtos/json", methods=["GET"])
@@ -33,7 +32,6 @@ def adicionar():
     if nome and id and preco:
         documentos = list(collection.find({}, {"_id": 0}))
         id_existente = any(d["id"] == int(id) for d in documentos)
-        print(id_existente)
         if id_existente:
             return redirect(url_for('adicionar'))
         else:   
